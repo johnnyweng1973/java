@@ -1,1 +1,3 @@
-SpringBootWebfluxHelloApplication.class
+com\example\springbootwebfluxhello\controller\HelloWebFluxController.class
+com\example\springbootwebfluxhello\entity\User.class
+com\example\springbootwebfluxhello\SpringBootWebfluxHelloApplication.class
