@@ -21,3 +21,6 @@ In this example, it can handle request with synchronous way which return a strin
 
 5. Json library
 As shown above, when you return a Mono<User> to Spring, spring will use json library jackson to serialize this object. It will output name-value pairs for all private fields of this object who has public getter method.
+
+6. annotation
+annotation is defined as @interface in java. Spring framework defines a lot of these annotations. Java will add annotations of classes to meta info of a class file and during runtime spring framework will check and decode these meta info. 
