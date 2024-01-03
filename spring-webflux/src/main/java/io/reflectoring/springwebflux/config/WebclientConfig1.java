@@ -18,7 +18,7 @@ import javax.net.ssl.SSLException;
 import java.util.concurrent.TimeUnit;
 
 @Configuration
-public class WebclientConfig {
+public class WebclientConfig1 {
 
     @Bean
     public WebClient getWebClientBuilder() throws SSLException {

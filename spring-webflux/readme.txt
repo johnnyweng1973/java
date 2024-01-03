@@ -16,6 +16,17 @@ Project webflux:
    after repository receive data response from database, it will run the method registered in  this mono.
 
 3. Configuration class. 
-   Configuration annotation tells spring framework this class has methods generating beans with @beans annotation. In this case, bean is a routerfunction and this bean is created with factory method route of utility class routerfunctions
+   Configuration annotation tells spring framework this class has methods generating beans with @beans annotation. 
+   In this case, bean is a routerfunction and this bean is created with factory method route of utility class routerfunctions
 This functioninterface looks like a event machine implemented by two dimensional array. From input of event and state you find the method to execute. 
 But this routerinterface won't be implemented by array  
+   the WebClientUtil class in the same dir is not used in the project
+
+4. Client class
+   1. WebClientUtil
+   WebClientUtil is annotated with @Component and it is created as a bean through Context.getBean(WebClientUtil.class). In java every class has a class object which include the meta info .
+   WebClientUtil include an instance of WebClient. It's constructor required a WebClient.builder. Spring framework will create an instance of WebClient.Builder and push it into this constructor and a WebClient will be created with this builder.
+   WebClient is an interface and Builder is another interface defined inside this interface. 
+   Builder is a 
+
+4. 
