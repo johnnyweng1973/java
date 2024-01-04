@@ -27,4 +27,5 @@ annotation is defined as @interface in java. Spring framework defines a lot of t
 spring framework annotations:
   1. core annotations:  @Component, @RestController, @Service, @Repository
   2. web annotations:  @PathVirable, @GetMapping 
-7. 
+7. Restful API
+   it use HTTP request to perform standard database functions like creating, reading, updating and deleting records within a resource. 
