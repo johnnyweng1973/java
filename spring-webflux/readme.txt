@@ -24,9 +24,26 @@ But this routerinterface won't be implemented by array
 
 4. Client class
    1. WebClientUtil
-   WebClientUtil is annotated with @Component and it is created as a bean through Context.getBean(WebClientUtil.class). In java every class has a class object which include the meta info .
-   WebClientUtil include an instance of WebClient. It's constructor required a WebClient.builder. Spring framework will create an instance of WebClient.Builder and push it into this constructor and a WebClient will be created with this builder.
+  
+   WebClientUtil is annotated with @Component and its instance is created as a bean through Context.getBean(WebClientUtil.class). In java every class has a class object which include the meta info .
+      1.1 WebClient builder
+   WebClientUtil includes an instance of WebClient. It's constructor required a WebClient.builder. Spring framework will create an instance of WebClient.Builder and push it into this constructor and a WebClient will be created with this builder.
    WebClient is an interface and Builder is another interface defined inside this interface. 
-   Builder is a 
+   WebClient is a high-level and fluent API for making Http requests and handle responses. 
+   Builder is a mutable one which means it supports chained method calls on it and step by step configuring the WebClient.
+      1.2 send http request and handle response
+    through a chained method calls http request sending and response handling are implmented.
+    this.client.get().uri("/api/users").accept(MediaType.APPLICATION_JSON)
+				 .retrieve()
+				 .bodyToMono(String.class)
+			     .subscribe(customName -> System.out.println("webclient recevie " + customName))
+		         ;
+   retrieve() will send out http request and retrun a mono object
+   the following calls are used to manupilate the object. In this case, it will change mono data to http response body in string format and print it out.
+     1.3 logging and ExchangeFilterFunction
+     ExchangeFilterFunction is a functional interface. it has two types: request and response filter fucntions. you can declare it with lambda function. it is a paratmer of method filter(). This filter function will apply to all http request and response in this webclient.
+     you can  
+     logging function can be implmeneted in ExchangeFilterFunction and call method filter() to set it to WebClient
+     logging function come from slf4j module. all instances of WebclientUtil share one logger instance and it is thread-safe.
+     
 
-4. 
