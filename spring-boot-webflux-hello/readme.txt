@@ -24,3 +24,7 @@ As shown above, when you return a Mono<User> to Spring, spring will use json lib
 
 6. annotation
 annotation is defined as @interface in java. Spring framework defines a lot of these annotations. Java will add annotations of classes to meta info of a class file and during runtime spring framework will check and decode these meta info. 
+spring framework annotations:
+  1. core annotations:  @Component, @RestController, @Service, @Repository
+  2. web annotations:  @PathVirable 
+7. 
