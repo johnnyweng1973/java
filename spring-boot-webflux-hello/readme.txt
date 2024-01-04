@@ -27,5 +27,12 @@ annotation is defined as @interface in java. Spring framework defines a lot of t
 spring framework annotations:
   1. core annotations:  @Component, @RestController, @Service, @Repository
   2. web annotations:  @PathVirable, @GetMapping 
+
 7. Restful API
-   it use HTTP request to perform standard database functions like creating, reading, updating and deleting records within a resource. 
+   it uses HTTP requests to perform standard database functions like creating, reading, updating and deleting records within a resource. User info are in message body in JSon format. it is a light-weighted compared to SOAP which uses XML message 
+   the following are mapping we used:
+   1 http post with user info in request body to create a user, user info in http response body.
+   2.http get to read user info, user info in http response body
+   3. http put with user info in request body to update a user, user info in response body
+   4. http delete to delete a user
+   
