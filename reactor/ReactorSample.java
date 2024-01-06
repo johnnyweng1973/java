@@ -1,7 +1,10 @@
 import org.reactivestreams.Subscription;
 import reactor.core.publisher.BaseSubscriber;
 import reactor.core.publisher.Flux;
-
+/* Mono and Flux are defined in Project Reactor， Flux is an abstract class which implements interface Publisher. As abstract class,
+you cannot create an instance out of it directly. But Flux provides several convenient factory methods such as range(), just().
+Flux can emit a stream of data while Mono only emit once.
+*/
 /*
 create a publisher:
     1. two publisher, Flux and Mono
