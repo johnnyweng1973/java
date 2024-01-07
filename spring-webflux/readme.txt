@@ -45,5 +45,9 @@ But this routerinterface won't be implemented by array
      you can  
      logging function can be implmeneted in ExchangeFilterFunction and call method filter() to set it to WebClient
      logging function come from slf4j module. all instances of WebclientUtil share one logger instance and it is thread-safe.
+
+5. UserHandler vs Controller
+  Controller is annotated with @RestControl so spring framework will generate response with user info in json body automatically. handlers in controller return Mono<User>. in case of no user found or failed operation, handler need to return a response with error code. so famework can accept two return results for same endpoint handler, Mono<User> or Mono<ResponseEntity<>>
+   Handler in UserHandler needs to generate response by itself and spring webflux provides such reactive response factory methods. 
      
 
